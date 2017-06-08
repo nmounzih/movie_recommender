@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'rest_framework',
     'recommender_app.apps.RecommenderAppConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -39,6 +40,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticatedOrReadOnly',
+    ),
+    'PAGE-SIZE': 10
+}
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
