@@ -31,4 +31,5 @@ urlpatterns = [
         namespace='rest_framework')),
     url(r'^$', views.index, name='index'),
     url(r'^profile/(?P<id>[0-9]+)', views.profile, name='profile'),
+    url(r'^movie_detail/(?P<id>[0-9]+)', views.movie_detail, name='movie_detail'),
 ]
