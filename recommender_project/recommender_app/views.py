@@ -22,3 +22,8 @@ class RatingViewSet(viewsets.ModelViewSet):
 def index(request):
     movies = Movie.objects.all()
     return render(request, 'recommender_app/index.html', {'movies': movies})
+
+
+def profile(request, id):
+    rater = Rater.objects.filter(id=id)
+    return render(request, 'recommender_app/profile.html', {'rater': rater})
