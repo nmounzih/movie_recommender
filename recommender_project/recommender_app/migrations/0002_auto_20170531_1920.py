@@ -43,7 +43,7 @@ def load_ratings(apps, schema_editor):
         for row in reader:
             m = Movie.objects.get(id=row['movie_id'])
             rater = Rater.objects.get(id=row['rater_id'])
-            r = Rating(rating=row['rating'], timestamp=row[ea'timestamp'], movie=m, rater=rater)
+            r = Rating(rating=row['rating'], timestamp=row['timestamp'], movie=m, rater=rater)
             r.save()
 
 

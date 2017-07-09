@@ -21,5 +21,4 @@ class RatingViewSet(viewsets.ModelViewSet):
 
 def index(request):
     movies = Movie.objects.all()
-    movies = sorted(movies)
     return render(request, 'recommender_app/index.html', {'movies': movies})
