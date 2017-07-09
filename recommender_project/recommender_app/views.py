@@ -25,5 +25,14 @@ def index(request):
 
 
 def profile(request, id):
-    rater = Rater.objects.filter(id=id)
-    return render(request, 'recommender_app/profile.html', {'rater': rater})
+    r = Rater.objects.get(id=id)
+    context = {}
+    context['rater'] = r
+    return render(request, 'recommender_app/profile.html', context)
+
+
+def movie_detail(request, id):
+    m = Movie.objects.get(id=id)
+    context = {}
+    context['movie'] = m
+    return render(request, 'recommender_app/movie_detail.html', context)
