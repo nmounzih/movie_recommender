@@ -20,7 +20,7 @@ class RatingViewSet(viewsets.ModelViewSet):
 
 
 def index(request):
-    movies = Movie.objects.all()
+    movies = Movie.objects.all() #turn to top 20 later with averages
     return render(request, 'recommender_app/index.html', {'movies': movies})
 
 
@@ -36,3 +36,8 @@ def movie_detail(request, id):
     context = {}
     context['movie'] = m
     return render(request, 'recommender_app/movie_detail.html', context)
+
+
+def library(request):
+    movies = Movie.objects.all()
+    return render(request, 'recommender_app/library.html', {'movies': movies})
