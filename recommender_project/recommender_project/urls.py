@@ -30,4 +30,5 @@ urlpatterns = [
     url(r'^api-auth/', include('rest_framework.urls',
         namespace='rest_framework')),
     url(r'^$', views.index, name='index'),
+    url(r'^profile/(?P<id>[0-9]+)', views.profile, name='profile'),
 ]
