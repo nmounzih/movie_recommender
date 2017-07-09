@@ -15,10 +15,10 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
-from rest_framework import router
+from rest_framework import routers
 from recommender_app import views
 
-router = router.DefaultRouter()
+router = routers.DefaultRouter()
 router.register(r'raters', views.RaterViewSet)
 router.register(r'movies', views.MovieViewSet)
 router.register(r'ratings', views.RatingViewSet)
